@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Galaxia de girasoles</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌻%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+    <!-- Librerías locales (no dependen de ningún CDN). Three.js r128 incluye FontLoader y TextGeometry. -->
+    <script defer src="lib/three.min.js"></script>
+    <script defer src="lib/OrbitControls.js"></script>
+    <script defer src="lib/fuente-gentilis.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="cielo" id="cielo-estrellas">
+        <div class="luna"></div>
+    </div>
+
+    <div id="cargando">
+        <div class="contenido-cargando">
+            <h2>Cargando</h2><span id="puntos-cargando"></span>
+            <div class="texto-progreso" id="texto-progreso">0%</div>
+        </div>
+    </div>
+
+    <div id="contenedor-escena"></div>
+
+    <div id="superposicion-ui">
+        <button id="alternar-audio" type="button" aria-label="Activar o desactivar la música">OFF</button>
+        <div id="indicador-toque"></div>
+        <div class="zona-inferior">
+            <div class="galeria">
+                <button type="button" class="elemento-galeria" data-indice="0" aria-label="Abrir mensaje 1"><span aria-hidden="true">🌻</span></button>
+                <button type="button" class="elemento-galeria" data-indice="1" aria-label="Abrir mensaje 2"><span aria-hidden="true">🌻</span></button>
+                <button type="button" class="elemento-galeria" data-indice="2" aria-label="Abrir mensaje 3"><span aria-hidden="true">🌻</span></button>
+                <button type="button" class="elemento-galeria" data-indice="3" aria-label="Abrir mensaje 4"><span aria-hidden="true">🌻</span></button>
+            </div>
+            <div id="instrucciones">Toca la pantalla y deja florecer la galaxia 🌻 </div>
+        </div>
+    </div>
+
+    <div id="modal-imagen" class="modal">
+        <button type="button" class="boton-cerrar" aria-label="Cerrar mensaje">&times;</button>
+        <div class="contenido-modal" id="imagen-modal" aria-hidden="true">🌻</div>
+        <div class="mensaje-modal" id="mensaje-modal"></div>
+    </div>
+
+    <audio id="audio-fondo" src="Musica.mp3" preload="none" playsinline loop></audio>
+
+    <noscript><p style="position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#000;color:#fff;padding:20px;text-align:center">Activa JavaScript para ver la galaxia de girasoles 🌻</p></noscript>
+</body>
+</html>
